@@ -17,6 +17,7 @@ function arg(name: string): string | null {
 }
 
 function copyFiles(src: string, dst: string): void {
+  if (!existsSync(src)) return; // screenshots are optional in the repo; the run must not fail without them
   mkdirSync(dst, { recursive: true });
   for (const name of readdirSync(src)) {
     const s = join(src, name);
