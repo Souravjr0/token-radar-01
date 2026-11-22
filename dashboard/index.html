@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <p class="kicker">TOKEN LAUNCH RADAR &middot; DEFI LLAMA SNAPSHOT</p>
+    <h1>Which pre-token protocol is worth farming next?</h1>
+    <p class="sub">Every protocol below <strong>records no token</strong> in the snapshot. Ranked by an implied launch value worked out from its own TVL, growth and age — not by TVL alone, and never from a hand-picked list of names.</p>
+  </div>
+  <dl class="stats" id="stats"></dl>
+</header>
+<section class="method" id="method"></section>
+<nav class="tabs" id="tabs">
+  <button data-view="board" class="on">Board — all 198</button>
+  <button data-view="watchlist">Watchlist — 40</button>
+  <button data-view="live">Live tokens — calibration</button>
+</nav>
+<div class="controls">
+  <label>Search <input id="q" type="search" placeholder="protocol, category or chain"></label>
+  <label>Category <select id="cat"><option value="">All categories</option></select></label>
+  <label>Sort <select id="sort">
+    <option value="implied">Implied value</option>
+    <option value="tvl">TVL</option>
+    <option value="growth">7-day growth</option>
+    <option value="age">Age (days listed)</option>
+  </select></label>
+  <label class="check"><input id="watchOnly" type="checkbox"> Watchlist only</label>
+</div>
+<main>
+  <table id="board">
+    <thead><tr>
+      <th>#</th><th>Protocol</th><th>Category</th><th>Chains</th>
+      <th class="num">TVL</th><th class="num">7d</th><th class="num">Age</th>
+      <th class="num">Implied value</th><th class="num">Ratio</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <p class="count" id="count"></p>
+</main>
+<section class="detail" id="detail" aria-live="polite">
+  <p class="hint">Click any row for its detail view: model breakdown and farm plan.</p>
+</section>
+<footer>
+  <p>Snapshot: <span id="src"></span>. Implied value is this radar's own claim, never a prediction that a token will launch, or when. A protocol on this board may still have a token its DefiLlama record does not carry. Do your own checks before spending money.</p>
+</footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
